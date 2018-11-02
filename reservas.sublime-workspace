@@ -1,0 +1,1018 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"thou",
+				"thought〔variable〕"
+			],
+			[
+				"tho",
+				"$thought〔variable〕"
+			],
+			[
+				"v-",
+				"v-on:click=〔attribute〕"
+			],
+			[
+				"bs3-in",
+				"bs3-input:text\tbs3-input-text"
+			],
+			[
+				"delete",
+				"deleteThought"
+			],
+			[
+				"bu",
+				"bs3-button:danger\tbs3-button-danger"
+			],
+			[
+				"butt",
+				"b4:button\tbutton"
+			],
+			[
+				"b4cards",
+				"b4:cards:header\theader&footer"
+			],
+			[
+				"b4",
+				"b4:cards\tcards"
+			],
+			[
+				"bs3-but",
+				"bs3-button:primary\tbs3-button-primary"
+			],
+			[
+				"bs3-panel",
+				"bs3-panel:info\tbs3-panel-info"
+			],
+			[
+				"hea",
+				"header\tTag"
+			],
+			[
+				"bs3",
+				"bs3-panel\tbs3-panel"
+			],
+			[
+				"ava",
+				"$available_gateway_key〔variable〕"
+			],
+			[
+				"cart_",
+				"$cart_item〔variable〕"
+			],
+			[
+				"click",
+				"click"
+			],
+			[
+				"cart_item",
+				"$cart_item_data〔variable〕"
+			],
+			[
+				"Qu",
+				"Quote"
+			],
+			[
+				"req",
+				"request_a_quote"
+			],
+			[
+				"same_day_",
+				"same_day_booking_fees"
+			],
+			[
+				"produc",
+				"products"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"booking",
+				"bookingID"
+			],
+			[
+				"same_day",
+				"same_day_booking_fees"
+			],
+			[
+				"arra",
+				"array〔function〕"
+			],
+			[
+				"loca",
+				"$location〔variable〕"
+			],
+			[
+				"closes",
+				"closest"
+			],
+			[
+				"car",
+				"car_seat_booster〔variable〕"
+			],
+			[
+				"margin",
+				"margin-left\tproperty"
+			],
+			[
+				"book",
+				"bookid"
+			],
+			[
+				"comman",
+				"command_type"
+			],
+			[
+				"sel",
+				"selected"
+			],
+			[
+				"Ca",
+				"Cancelled"
+			],
+			[
+				"price_per",
+				"$price_per_box〔variable〕"
+			],
+			[
+				"tie",
+				"tier_three_sqft"
+			],
+			[
+				"tier",
+				"tier_one_sqft"
+			],
+			[
+				"boxes",
+				"boxes_per_crate"
+			],
+			[
+				"current_",
+				"$current_user〔variable〕"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"remove",
+				"removeClass\t.removeClass()"
+			],
+			[
+				"tog",
+				"toggleClass\t.toggleClass()"
+			],
+			[
+				"woocommerce_templa",
+				"woocommerce_template_loop_add_to_cart"
+			],
+			[
+				"show_",
+				"show_price_logged"
+			],
+			[
+				"add_f",
+				"add_filter"
+			],
+			[
+				"sq",
+				"sqft_per_box"
+			],
+			[
+				"sqft",
+				"sqft_user"
+			],
+			[
+				"par",
+				"parseFloat〔function〕"
+			],
+			[
+				"key",
+				"$key_s〔variable〕"
+			],
+			[
+				"keypress",
+				"keypress"
+			],
+			[
+				"padd",
+				"padding\tproperty"
+			],
+			[
+				"max",
+				"$max_passengers〔variable〕"
+			],
+			[
+				"city_",
+				"city_location_id"
+			],
+			[
+				"inl",
+				"inline\tdisplay"
+			],
+			[
+				"slider",
+				"slider_selected"
+			],
+			[
+				"inser",
+				"insertAfter\t.insertAfter()"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"console",
+				"console.log"
+			],
+			[
+				"settings",
+				"$settings〔variable〕"
+			],
+			[
+				"same_da",
+				"$same_day_ride_requests〔variable〕"
+			],
+			[
+				"same",
+				"same_day_ride_requests"
+			],
+			[
+				"tex",
+				"textarea\tTag"
+			],
+			[
+				"newd",
+				"newdate_end"
+			],
+			[
+				"strtoti",
+				"strtotime〔function〕"
+			],
+			[
+				"array2",
+				"$array2〔variable〕"
+			],
+			[
+				"date",
+				"date('Y-m-d"
+			],
+			[
+				"last",
+				"last_bidder_auction"
+			],
+			[
+				"__",
+				"$__user_ID〔variable〕"
+			],
+			[
+				"script",
+				"scripts.js"
+			],
+			[
+				"array",
+				"array〔keyword〕"
+			],
+			[
+				"qty",
+				"qty_select"
+			],
+			[
+				"_price",
+				"_price_opt"
+			],
+			[
+				"tr",
+				"tr\tTag"
+			],
+			[
+				"uplo",
+				"$uploaded〔variable〕"
+			],
+			[
+				"procedu",
+				"$procedures〔variable〕"
+			],
+			[
+				"proced",
+				"$procedures〔variable〕"
+			],
+			[
+				"proc",
+				"procedures"
+			],
+			[
+				"account",
+				"account_number"
+			],
+			[
+				"result",
+				"$result_m〔variable〕"
+			],
+			[
+				"phon",
+				"phone_passenger"
+			],
+			[
+				"name_",
+				"name_passenger"
+			],
+			[
+				"pick",
+				"pickup_address"
+			],
+			[
+				"address_",
+				"$address_p〔variable〕"
+			],
+			[
+				"ol",
+				"olongitude"
+			],
+			[
+				"marg",
+				"margin-bottom\tproperty"
+			],
+			[
+				"acc",
+				"account〔variable〕"
+			],
+			[
+				"type",
+				"typeof〔keyword〕"
+			],
+			[
+				"qu",
+				"$queryx〔variable〕"
+			],
+			[
+				"accoun",
+				"$account_number〔variable〕"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"insert",
+				"insertBefore\t.insertBefore()"
+			],
+			[
+				"clas",
+				"class"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"chec",
+				"checks"
+			],
+			[
+				"col",
+				"col-md-12"
+			],
+			[
+				"paddin",
+				"padding-top\tproperty"
+			],
+			[
+				"Occ",
+				"Occlusal"
+			],
+			[
+				"calc",
+				"calc_total_design_capacity〔function〕"
+			],
+			[
+				"typ",
+				"typical-server-power"
+			],
+			[
+				"conso",
+				"console.log"
+			],
+			[
+				"total_CAPEX",
+				"total_CAPEX_savings_val"
+			],
+			[
+				"sav",
+				"savings_val"
+			],
+			[
+				"annual_energy_cost_",
+				"annual_energy_cost_savings_val_grc"
+			],
+			[
+				"total_C",
+				"total_CAPEX_savings_per"
+			],
+			[
+				"total_",
+				"total_CAPEX_grc"
+			],
+			[
+				"annual_maintenance_costs_",
+				"annual_maintenance_costs_traditional"
+			],
+			[
+				"annual_m",
+				"annual_maintenance_costs_grc"
+			],
+			[
+				"anu",
+				"annual-maintenance-costs-grc"
+			],
+			[
+				"annual_energy_cost",
+				"annual_energy_costs_grc"
+			],
+			[
+				"annual_energy_co",
+				"annual_energy_costs_grc"
+			],
+			[
+				"annual_ener",
+				"annual_energy_use_traditional"
+			],
+			[
+				"annual_e",
+				"annual_energy_use_grc"
+			],
+			[
+				"ba",
+				"background-color\tproperty"
+			],
+			[
+				"form",
+				"form-control"
+			],
+			[
+				"attr",
+				"attr\t.attr() - single"
+			],
+			[
+				"for",
+				"for\tfor …"
+			],
+			[
+				"opt",
+				"option\tTag"
+			],
+			[
+				"inline",
+				"inline-block\tdisplay"
+			],
+			[
+				"border",
+				"border-bottom\tproperty"
+			],
+			[
+				"appe",
+				"appendTo\t.appendTo()"
+			],
+			[
+				"parent",
+				"parent〔variable〕"
+			],
+			[
+				"next",
+				"next-dental-lab-1-proc.php"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"u",
+				"uppercase\ttext-transform"
+			],
+			[
+				"occlu",
+				"occlusal_stainig"
+			],
+			[
+				"boun",
+				"bounce_parent"
+			],
+			[
+				"he",
+				"height"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 490.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"co",
+				"CodeFormatter: Format as CSS Syntax"
+			],
+			[
+				"cod",
+				"CodeFormatter: Format as Javascript Syntax"
+			],
+			[
+				"code",
+				"CodeFormatter: Format as Javascript Syntax"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"C",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"PRET",
+				"HTMLPrettify"
+			],
+			[
+				"htm",
+				"HTMLPrettify"
+			],
+			[
+				"bea",
+				"HTMLBeautify"
+			],
+			[
+				"beat",
+				"HTMLBeautify"
+			],
+			[
+				"codefo",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"beati",
+				"HTMLBeautify"
+			],
+			[
+				"pret",
+				"HTMLPrettify"
+			],
+			[
+				"mi",
+				"Minify Javascript to file"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"PHP Code Sniffer: ",
+				"PHP Code Sniffer: Sniff this file"
+			],
+			[
+				"Snippet: ",
+				"Snippet: SERVER['…']"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"indept",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"Package Control: remo",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 741.0
+	},
+	"console":
+	{
+		"height": 446.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/xampp/htdocs/proyectos/laravel/reservas_teatro"
+	],
+	"file_history":
+	[
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/Email_lib.php",
+		"/C/xampp/htdocs/proyectos/laravel/blog/database/seeds/UsersTableSeeder.php",
+		"/C/xampp/htdocs/proyectos/laravel/blog/resources/views/home.blade.php",
+		"/C/xampp/htdocs/proyectos/laravel/blog/routes/api.php",
+		"/C/xampp/htdocs/proyectos/laravel/blog/database/migrations/2018_11_02_042336_create_thoughts_table.php",
+		"/C/xampp/htdocs/proyectos/laravel/blog/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/proyectos/laravel/blog/.env",
+		"/C/xampp/phpMyAdmin/libraries/sql.lib.php",
+		"/C/xampp/phpMyAdmin - copia/config.inc.php",
+		"/C/xampp/phpMyAdmin/config.inc.php",
+		"/C/xampp/phpMyAdmin - copia/libraries/Config.php",
+		"/C/xampp/htdocs/proyectos/laravel/blog/.env.example",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/model_cab.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/bubblrides.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/Stripe_lib.php",
+		"/C/xampp/htdocs/proyectos/laravel/blog/public/index.php",
+		"/C/Users/Usuario/AppData/Roaming/Sublime Text 3/Packages/User/phpcs.sublime-settings",
+		"/C/Users/Usuario/AppData/Roaming/Sublime Text 3/Packages/Phpcs/phpcs.sublime-settings",
+		"/C/xampp/htdocs/proyectos/laravel/blog/package.json",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/Rides.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/Rides 2.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/scripts.js",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/bubblrides_rides.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/model_admin.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/model_admin 2.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin.php",
+		"/C/xampp/htdocs/odontoclass/application/config/database.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/jquery.js",
+		"/C/xampp/php/php.ini-development",
+		"/C/xampp/php/php.ini-production",
+		"/C/xampp/php/INSTALL",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/bookings-itineraries.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/functions.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/collection_category_form.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/tabs.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/bookings-itineraries.js",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/content-single-product-default.php",
+		"/C/xampp/php/README.md",
+		"/C/Users/Usuario/Downloads/plugin.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/index 3.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin 2.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/dashboard.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/user.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin 3.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/index 2.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/wp-login.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/profile-login.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/plugin.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/MCAPI.class.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/check_expire_date.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/widget.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/index.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/async-upload.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/wp-load.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/ajax-actions.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/model_cab 2.php",
+		"/C/Users/Usuario/AppData/Roaming/Sublime Text 3/Packages/JSLint/JSLint.sublime-settings",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/sample-request-form.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/bubblrides_rides 2.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/bubblrides 2.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/disty-registration-form.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/scripts 2.js",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/theothersideofthestory_php7.0.access.log",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/theothersideofthestory_php7.0.error.log",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/theothersideofthestory_nginx.access_ssl.log",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/theothersideofthestory_apache.access.log",
+		"/C/Users/Usuario/Downloads/for.html",
+		"/C/Users/Usuario/Downloads/upscape/content-single-product-style-4.php",
+		"/C/Users/Usuario/Downloads/upscape/content-product.php",
+		"/C/Users/Usuario/Downloads/upscape/content-product_cat.php",
+		"/C/Users/Usuario/Downloads/upscape/content-single-product.php",
+		"/C/Users/Usuario/Downloads/upscape/content-single-product-style-2.php",
+		"/C/Users/Usuario/Downloads/upscape/content-single-product-default.php",
+		"/C/Users/Usuario/Downloads/upscape/content-single-product-style-3.php",
+		"/C/Users/Usuario/Downloads/upscape/single-product.php",
+		"/C/Users/Usuario/Downloads/upscape/quick-view.php",
+		"/C/Users/Usuario/Downloads/upscape/archive-product.php",
+		"/C/Users/Usuario/Downloads/upscape/wrapper-start.php",
+		"/C/Users/Usuario/Downloads/upscape/wrapper-end.php",
+		"/C/Users/Usuario/Downloads/upscape/quantity-input.php",
+		"/C/Users/Usuario/Downloads/upscape/sidebar.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/functions_helper 2.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/functions_helper.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-3/model_cab 2.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-3/Rides.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-3/bubblrides.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-3/scripts.js",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-3/model_cab.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin_sidebar 2.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin_sidebar.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/bubblrides_horizontal.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/jquery-timepicker 2.js",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/jquery-timepicker.js",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/geo 2.js",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/geo.js",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin-reports-multiple-II.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin-reports-multiple.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/style 2.css",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/style.css",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/split-commission-form.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/split-commission-form-2nd.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin-contact-administrator 2.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin-contact-administrator.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin-same-day-settings.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin-same-day-settings 2.php",
+		"/C/Users/Usuario/Desktop/consulta bookings",
+		"/C/Users/Usuario/Desktop/config-calculator.php",
+		"/C/Users/Usuario/Desktop/chartist.min.js",
+		"/C/Users/Usuario/Desktop/chartist.min.css",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin-edit-booking-details.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/main.css",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/detail.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/Users.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/confirm_book.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/booking.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/details_booking_selected.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/details-booking-modal-include-html.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/details-booking-user.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/view-admin-log 2.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/view-admin-log.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/admin-reports.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/Email_lib 2.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/update-payment-info-modal.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/slider 2.js",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/slider.js",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/same-day-fees-modal.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/en_lang.php",
+		"/C/Users/Usuario/AppData/Local/Temp/fz3temp-2/confirm_book 2.php"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 134.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 44.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 118.0
+	},
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 96.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.paneltranformations":
+	{
+		"height": 118.0
+	},
+	"output.sftp":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "reservas.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"formc",
+				"resources\\js\\components\\FormComponent.vue"
+			],
+			[
+				"tho",
+				"app\\Http\\Controllers\\API\\ThoughtController.php"
+			],
+			[
+				"homecon",
+				"app\\Http\\Controllers\\HomeController.php"
+			],
+			[
+				"mode_a",
+				"C:\\Users\\Usuario\\AppData\\Local\\Temp\\fz3temp-2\\model_admin.php"
+			],
+			[
+				"admin.p",
+				"C:\\Users\\Usuario\\AppData\\Local\\Temp\\fz3temp-2\\admin.php"
+			],
+			[
+				"admin.",
+				"C:\\Users\\Usuario\\AppData\\Local\\Temp\\fz3temp-2\\admin.php"
+			],
+			[
+				"boo",
+				"assets\\js\\bootbox.min.js"
+			],
+			[
+				"datata",
+				"assets\\bower_components\\datatables.net\\js\\jquery.dataTables.js"
+			],
+			[
+				"pacie",
+				"assets\\js\\pacientes.js"
+			],
+			[
+				"trata",
+				"C:\\xampp\\htdocs\\odontograma-2\\public\\js\\tratamientos.js"
+			],
+			[
+				"trat",
+				"C:\\xampp\\htdocs\\odontograma-2\\public\\js\\tratamientos.js"
+			],
+			[
+				"rides",
+				"C:\\Users\\Usuario\\AppData\\Local\\Temp\\fz3temp-2\\Rides.php"
+			],
+			[
+				"his",
+				"application\\controllers\\Historias.php"
+			],
+			[
+				"custo",
+				"assets\\css\\custom.css"
+			],
+			[
+				"cuso",
+				"assets\\bower_components\\font-awesome\\HELP-US-OUT.txt"
+			],
+			[
+				"func",
+				"application\\helpers\\functions_helper.php"
+			],
+			[
+				"odontr",
+				"assets\\css\\odontograma.css"
+			],
+			[
+				"main-s",
+				"C:\\Users\\Usuario\\AppData\\Local\\Temp\\fz3temp-2\\main-slider.php"
+			],
+			[
+				"hea",
+				"application\\views\\templates\\header.php"
+			],
+			[
+				"sample",
+				"C:\\Users\\Usuario\\AppData\\Local\\Temp\\fz3temp-2\\register-sample-form.php"
+			],
+			[
+				"modela",
+				"C:\\Users\\Usuario\\AppData\\Local\\Temp\\fz3temp-2\\model_admin.php"
+			],
+			[
+				"dist",
+				"C:\\Users\\Usuario\\AppData\\Local\\Temp\\fz3temp-2\\disty-registration-form.php"
+			],
+			[
+				"split",
+				"C:\\Users\\Usuario\\AppData\\Local\\Temp\\fz3temp-2\\split-commission-form.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 320.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
