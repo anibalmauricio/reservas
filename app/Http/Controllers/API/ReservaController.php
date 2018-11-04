@@ -4,9 +4,10 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Book;
+use App\Reserva;
+use App\UbicacionReserva;
 
-class BookController extends Controller
+class ReservaController extends Controller
 {
     /**
      * Display a listing of the resource.

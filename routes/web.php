@@ -18,4 +18,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::apiResource('reservas', 'API\BookController');
+Route::apiResource('reservas', 'API\ReservaController');
