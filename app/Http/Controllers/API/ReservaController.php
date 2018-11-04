@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Reserva;
 use App\UbicacionReserva;
+use Illuminate\Support\Facades\Storage;
 
 class ReservaController extends Controller
 {
@@ -20,7 +21,7 @@ class ReservaController extends Controller
      */
     public function index()
     {
-        return Reserva::where('user_id', auth()->id())->get();
+        return Reserva::where('user_id', auth()->id())->orderBy('fecha_reserva', 'desc')->get();
     }
 
     /**
@@ -33,6 +34,9 @@ class ReservaController extends Controller
     {
         $reserva = new Reserva();
         $reserva->fecha_reserva = $request->fecha_reserva;
+        $digits = 3;
+        $random = 'NRS-'.str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
+        $reserva->codigo_reserva = $random;
         $reserva->personas = $request->personas;
         $reserva->user_id = auth()->id();
         $reserva->save();
@@ -41,6 +45,8 @@ class ReservaController extends Controller
         $books = $request->books;
 
         $this->store_ubications($books, $reserva->id);
+
+        Storage::disk('local')->put('file.txt', 'Contents');
 
         return $reserva;
     }

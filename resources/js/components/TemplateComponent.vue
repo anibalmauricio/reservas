@@ -48,11 +48,6 @@
 
     import moment from 'moment'
 
-    Vue.filter('formatDate', function(value) {
-        if (value) {
-            return moment(String(value)).format('MM/DD/YYYY hh:mm')
-        }
-    });
     export default {
         data() {
             return {
@@ -147,12 +142,12 @@
                 const params = {
                     fecha_reserva: moment(String(this.fecha_reserva), "DD-MM-YYYY").format('YYYY/MM/DD'),
                     books: this.bookings,
-                    personas: this.personas
+                    personas: this.totalPersonas
                 };
 
                 console.log(params);
 
-                axios.post('/reservas', params)
+                axios.post('/reserva', params)
                     .then((response) => {
                         console.log(response);
                         // this.descripcion = '';
@@ -167,13 +162,6 @@
         computed: {
             totalPersonas: function () { return this.bookings.length },
             missingBookingDate: function () { return this.fecha_reserva === ''; },
-        },
-        filters: {
-            capitalize: function (value) {
-            if (!value) return ''
-            value = value.toString()
-            return value.charAt(0).toUpperCase() + value.slice(1)
-            }
         }
     }
 </script>

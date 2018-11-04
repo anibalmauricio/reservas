@@ -17,6 +17,7 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
+Vue.component('bookings-list-component', require('./components/BookingsListComponent.vue'));
 Vue.component('template-component', require('./components/TemplateComponent.vue'));
 Vue.component('grid-component', require('./components/GridComponent.vue'));
 Vue.component('bookings-component', require('./components/BookingsComponent.vue'));

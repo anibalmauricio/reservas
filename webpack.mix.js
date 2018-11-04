@@ -18,6 +18,5 @@ mix.autoload({
 });
 
 mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css').
-   .sass('resources/sass/font-awesome/font-awesome.scss', 'public/css/font-awesome');
+   .sass('resources/sass/app.scss', 'public/css');
 

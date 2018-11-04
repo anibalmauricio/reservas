@@ -18,4 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::apiResource('reservas', 'API\ReservaController');
+Route::apiResource('reserva', 'API\ReservaController');
+
+Route::get('reservas', 'ReservasController@index')->name('reservas');
+
+Route::get('detail/{id}', 'ReservasController@edit')->where('id', '[0-9]+')->name('mostrarReserva');
