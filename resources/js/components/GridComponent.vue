@@ -14,9 +14,10 @@
                 <tbody>
                     <tr v-for="(row, index_row) in rows" :key="row">
                         <th scope="row" class="table-dark">{{ row }}</th>
-                        <td class="" 
+                        <td
                             v-for="(value, index_col) in cols.length" 
                             v-on:click="onClickUpdate(index_row, index_col)"
+                            v-bind:class="contains(index_row, index_col)"
                             >
                             {{ cols[index_col] }}{{ row }}
                         </td>
@@ -31,75 +32,55 @@
         props: ['new_bookings', 'cols', 'rows'],
         data() {
             return {
-                // cols: this.cols,
-                // rows: this.rows
-                // new_bookings: [],
-                // booking: [],
-                // descripcion: ''
+                
             }
         },
         mounted() {
-            console.log('Component mounted.', this.new_bookings);
-            console.log('this.rows',this.rows);
-            console.log('this.cols', this.cols);
             console.log('Component mounted.');
-            // var _a = function(){
-                // var a = [];
-                var cols = this.cols.length,
-                    rows = this.rows.length;
-                for(var i = 0; i < rows; i++){
-                    this.new_bookings[i] = new Array(cols);
-                    for(var j = 0; j < cols; j++){
-                        this.new_bookings[i][j] = {
-                            'selected' : false
-                        };
-                    }
-                }
-                // return a;
-            // }
-            // .push(_a)
         },
         methods: {
-            
-            /*isset_array: function (arr) {
-                var i, max_i;
-                for (i = 1, max_i = arguments.length; i < max_i; i++) {
-                    arr = arr[arguments[i]];
-                    if (arr === undefined) {
-                        return false;
+            onClickUpdate(index_row, index_col, emit = true) {
+                let found = this.existNewBooking(index_row, index_col);
+                
+                if (found < 0) {
+                    let length = this.new_bookings.push({
+                        col: index_col,
+                        row: index_row
+                    });
+                    this.$set(this.new_bookings[length - 1], 'selected', !this.new_bookings[length - 1].selected)
+                    
+                } else {
+                    this.new_bookings.splice(found, 1);
+                    
+                }
+
+                if (emit)
+                    this.$emit('updateNewBooking', index_row, index_col);
+            },
+            contains: function(index_row, index_col) {
+                console.log('contains');
+                let found = this.existNewBooking(index_row, index_col);
+                
+                return {
+                    'booked' : (found < 0) ? false : true
+                }
+            },
+            existNewBooking: function (index_row, index_col) {
+                for(let i=0; i < this.new_bookings.length; i++){
+                    if( this.new_bookings[i].col == index_col && this.new_bookings[i].row == index_row){
+                        return i;
                     }
                 }
-                return true;
-            },*/
-            onClickUpdate(index_row, index_col) {
-                // console.log(index_row, index_col);
-                // const params = {
-                //     descripcion: this.descripcion
-                // };
-                // axios.post('/thoughts', params)
-                //     .then((response) => {
-                //         console.log(response);
-                //         this.descripcion = '';
-                //         const thought = response.data;
-                //         this.$emit('new', thought);
-                //     });
-                // if (this.isset_array(this.new_bookings, index_row, index_col)) {
-                    // this.new_bookings[index_row][index_col].selected = !this.new_bookings[index_row][index_col].selected;
-                    this.$set(this.new_bookings[index_row][index_col], 'selected', !this.new_bookings[index_row][index_col].selected)
-                // } else {
-                    // if (!this.new_bookings[index_row][index_col].selected) {
-                        // this.new_bookings[index_row][index_col].selected = !this.new_bookings[index_row][index_col].selected;
-                        // console.log(this.new_bookings);
-                    // }
-                // }
-                // this.$set('new', thought);
-                // @click="this.$set(item, 'selected', !item.selected)"
-
-                // this.booking[index] = thought;
-
-                this.$emit('updateNewBooking', index_row, index_col);
-                // console.log(this.new_bookings);
+                return -1;
             }
+        },
+        created() {
+            this.$root.$on('createImage', (index_row, index_col) => {
+                // your code goes here
+                console.log(index_row, index_col);
+                console.log('ssssss');
+                this.onClickUpdate(index_row, index_col, false);
+            })
         }
     }
 </script>

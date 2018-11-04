@@ -4,24 +4,24 @@
             <!-- <div class="card mb-3"> -->
                 <!-- <div class="card-body"> -->
                     <grid-component 
-                        @updateNewBooking="addThought"
+                        @updateNewBooking="addBooking"
                         :new_bookings="new_bookings"
                         :cols="cols"
                         :rows="rows"></grid-component>
                 <!-- </div> -->
             <!-- </div> -->
 
-            <div v-if="bookings.length > 0" class="card mb-3">
-                <div class="card-body">
-                    <ul>
+            <!-- <div  class="card mb-3"> -->
+                <!-- <div class="card-body"> -->
+                    <ul class="list-group" v-if="bookings.length > 0">
                     <bookings-component 
                         v-for="(n_book, index) in bookings" 
                         :key="index" 
                         :bookings="n_book"
-                        ></bookings-component>
+                        @delete="deleteBooking(index)"></bookings-component>
                     </ul>
-                </div>
-            </div>
+                <!-- </div> -->
+            <!-- </div> -->
         </div>
     </div>
     
@@ -34,32 +34,63 @@
                 cols: this.cols_range('A', 'J'),
                 rows: this.rows_range(1, 5),
                 new_bookings: [],
-                bookings: [],
-                col: '',
-                row: ''
+                bookings: []
             }
         },
         mounted() {
             console.log('Component mounted.');
+            this.new_bookings = [{
+                    col: 0,
+                    row: 0
+                }, {
+                    col: 6,
+                    row: 3
+            }];
+            this.bookings = [{
+                'col': this.cols[0],
+                'index_col': 0,
+                'row': this.rows[0],
+                'index_row': 0
+            }, {
+                'col': this.cols[6],
+                'index_col': 6,
+                'row': this.rows[3],
+                'index_row': 3
+            }];
             // axios.get('/thoughts').then((response) => {
             //     this.thoughts = response.data;
             // })
         },
         methods: {
-            addThought(index_row, index_col) {
-                console.log('addThought', index_row, index_col);
-                this.bookings.push({
-                    'col': this.cols[index_col],
-                    'row': this.rows[index_row]
-                });
-
-                console.log(this.bookings);
+            addBooking(index_row, index_col) {
+                // console.log('addBooking', index_row, index_col);
+                let found = this.isExistBook(this.cols[index_col], this.rows[index_row]);
+                if (found >= 0) {
+                    this.bookings.splice(found, 1);
+                } else {
+                    this.bookings.push({
+                        'col': this.cols[index_col],
+                        'index_col': index_col,
+                        'row': this.rows[index_row],
+                        'index_row': index_row
+                    });
+                }
+                console.log('this.bookings', this.bookings);
             },
-            deleteThought(index) {
-                this.thoughts.splice(index, 1);
+            isExistBook : function(col, row){
+                for(let i=0; i < this.bookings.length; i++){
+                    if( this.bookings[i].col == col && this.bookings[i].row == row){
+                        return i;
+                    }
+                }
+                return -1;
+            },
+            deleteBooking(index) {
+                this.bookings.splice(index, 1);
+                console.log('deleteBooking', this.new_bookings);
             },
             updateThought(index, thought) {
-                this.thoughts[index] = thought;
+                this.bookings[index] = thought;
             },
             cols_range: function(start,stop) {
                 var result=[];

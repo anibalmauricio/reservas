@@ -1,5 +1,9 @@
 <template>
-    <li class="divider" role="presentation">{{bookings.col}} {{ bookings.row }}</li>
+    <li class="divider list-group-item list-group-item-action" role="presentation" title="Borrar Reserva">{{bookings.col}} {{ bookings.row }}
+        <button class="btn-view-fund btn btn-default btn-xs float-right" type="button" v-on:click="onClickDeleteBook(bookings.index_row, bookings.index_col)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+    </li>
 </template>
 <script>
     export default {
@@ -9,11 +13,15 @@
             }
         },
         mounted() {
-            console.log('Component BookingsComponent.vue mounted.');
-            console.log(this.bookings);
+            // console.log('Component BookingsComponent.vue mounted.');
+            console.log('bookings ',this.bookings);
         },
         methods: {
-            
+            onClickDeleteBook: function(row, col) {
+                // alert('aaaaa');
+                this.$emit('delete');
+                this.$root.$emit('createImage', row, col)
+            }
         }
     }
 </script>
