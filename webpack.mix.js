@@ -11,6 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.autoload({
+    'jquery': ['$', 'window.jQuery', 'jQuery'],
+    'vue': ['Vue','window.Vue'],   
+    'moment': ['moment','window.moment'],   
+});
+
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css').
    .sass('resources/sass/font-awesome/font-awesome.scss', 'public/css/font-awesome');
+

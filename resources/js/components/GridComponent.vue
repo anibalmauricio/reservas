@@ -1,6 +1,7 @@
 <template>
     <!-- <div class="card mb-3"> -->
         <!-- <div class="card-body"> -->
+        <div class="grid-bookings">
             <table class="table table-bordered table-condensed">
                 <thead class="thead-dark">
                     <tr>
@@ -24,6 +25,7 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
         <!-- </div> -->
     <!-- </div> -->
 </template>

@@ -13527,35 +13527,39 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-table {
+.grid-bookings {
+  /* Focus stuff for mobile */
+}
+
+.grid-bookings table {
   overflow: hidden;
 }
 
-td,
-th {
+.grid-bookings td,
+.grid-bookings th {
   padding: 10px;
   position: relative;
   outline: 0;
   cursor: default;
 }
 
-table thead th:hover {
+.grid-bookings table thead th:hover {
   cursor: default !important;
 }
 
-td:hover:not(:nth-child(1)),
-th:hover:not(:nth-child(1)) {
+.grid-bookings td:hover:not(:nth-child(1)),
+.grid-bookings th:hover:not(:nth-child(1)) {
   cursor: pointer;
 }
 
-body:not(.nohover) tbody tr:hover {
+.grid-bookings tbody tr:hover {
   background-color: #ffa;
 }
 
-td:hover::after,
-thead th:not(:empty):hover::after,
-td:focus::after,
-thead th:not(:empty):focus::after {
+.grid-bookings td:hover::after,
+.grid-bookings thead th:not(:empty):hover::after,
+.grid-bookings td:focus::after,
+.grid-bookings thead th:not(:empty):focus::after {
   content: '';
   height: 10000px;
   left: 0;
@@ -13565,20 +13569,18 @@ thead th:not(:empty):focus::after {
   z-index: -1;
 }
 
-td:hover::after,
-th:hover::after {
+.grid-bookings td:hover::after,
+.grid-bookings th:hover::after {
   background-color: #ffa;
 }
 
-td:focus::after,
-th:focus::after {
+.grid-bookings td:focus::after,
+.grid-bookings th:focus::after {
   background-color: lightblue;
 }
 
-/* Focus stuff for mobile */
-
-td:focus::before,
-tbody th:focus::before {
+.grid-bookings td:focus::before,
+.grid-bookings tbody th:focus::before {
   background-color: lightblue;
   content: '';
   height: 100%;
@@ -13589,11 +13591,11 @@ tbody th:focus::before {
   z-index: -1;
 }
 
-.table th.table-dark {
+.grid-bookings .table th.table-dark {
   border-color: #32383e;
 }
 
-.booked {
+.grid-bookings .booked {
   background: #ffed4a;
 }
 

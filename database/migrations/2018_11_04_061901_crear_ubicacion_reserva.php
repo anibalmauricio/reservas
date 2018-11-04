@@ -16,10 +16,10 @@ class CrearUbicacionReserva extends Migration
         Schema::create('ubicacion_reserva', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('reserva_id')->unsigned();
-            $table->foreign('reserva_id')->references('id')->on('reservas');
+            $table->foreign('reserva_id')->references('id')->on('reservas')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('fila')->unsigned();
             $table->integer('columna')->unsigned();
-            $table->timestamps();
+            // $table->timestamps();
             $table->index(['reserva_id', 'fila', 'columna']);
         });
     }

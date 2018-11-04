@@ -1,40 +1,73 @@
 <template>
     <div class="panel panel-default">
         <div class="panel-body">
-            <!-- <div class="card mb-3"> -->
-                <!-- <div class="card-body"> -->
-                    <grid-component 
-                        @updateNewBooking="addBooking"
-                        :new_bookings="new_bookings"
-                        :cols="cols"
-                        :rows="rows"></grid-component>
-                <!-- </div> -->
-            <!-- </div> -->
+            <grid-component 
+                @updateNewBooking="addBooking"
+                :new_bookings="new_bookings"
+                :cols="cols"
+                :rows="rows"></grid-component>
 
-            <!-- <div  class="card mb-3"> -->
-                <!-- <div class="card-body"> -->
-                    <ul class="list-group" v-if="bookings.length > 0">
-                    <bookings-component 
-                        v-for="(n_book, index) in bookings" 
-                        :key="index" 
-                        :bookings="n_book"
-                        @delete="deleteBooking(index)"></bookings-component>
-                    </ul>
-                <!-- </div> -->
-            <!-- </div> -->
+            <form 
+                @submit.prevent="saveBooking" 
+                v-if="bookings.length > 0">
+                <input type="hidden" :value="totalPersonas" name="personas" >
+                <div  class="card mb-3">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="fecha_reserva">Fecha de la reserva:</label>
+                            <date-picker v-model="fecha_reserva" :config="options" v-bind:class="{ 'is-invalid': attemptSubmit && missingBookingDate }"></date-picker>
+                        </div>
+                        <ul class="list-group">
+                        <bookings-component 
+                            v-for="(n_book, index) in bookings" 
+                            :key="index" 
+                            :bookings="n_book"
+                            @delete="deleteBooking(index)"></bookings-component>
+                        </ul>
+                        <li class="list-group-item list-group-item-action active">Total Personas: {{ totalPersonas }}</li>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Guardar Reserva</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     
 </template>
 
 <script>
+    // Import required dependencies 
+    import 'bootstrap/dist/css/bootstrap.css';
+
+    // Import this component
+    import datePicker from 'vue-bootstrap-datetimepicker';
+
+    // Import date picker css
+    import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
+
+    import moment from 'moment'
+
+    Vue.filter('formatDate', function(value) {
+        if (value) {
+            return moment(String(value)).format('MM/DD/YYYY hh:mm')
+        }
+    });
     export default {
         data() {
             return {
                 cols: this.cols_range('A', 'J'),
                 rows: this.rows_range(1, 5),
                 new_bookings: [],
-                bookings: []
+                bookings: [],
+                date: new Date(),
+                options: {
+                    format: 'DD/MM/YYYY',
+                    useCurrent: true,
+                },
+                fecha_reserva: '',
+                personas: 0,
+                attemptSubmit: false
             }
         },
         mounted() {
@@ -101,6 +134,45 @@
             },
             rows_range: function(start, end) {
                 return Array(end - start + 1).fill().map((_, idx) => start + idx)
+            },
+            saveBooking: function(e) {
+                
+                this.attemptSubmit = true;
+
+                if (this.missingBookingDate) {
+                    e.preventDefault();
+                    return false;
+                }
+
+                const params = {
+                    fecha_reserva: moment(String(this.fecha_reserva), "DD-MM-YYYY").format('YYYY/MM/DD'),
+                    books: this.bookings,
+                    personas: this.personas
+                };
+
+                console.log(params);
+
+                axios.post('/reservas', params)
+                    .then((response) => {
+                        console.log(response);
+                        // this.descripcion = '';
+                        const reserva = response.data;
+                        this.$emit('new', reserva);
+                    });
+            }
+        },
+        components: {
+            datePicker
+        },
+        computed: {
+            totalPersonas: function () { return this.bookings.length },
+            missingBookingDate: function () { return this.fecha_reserva === ''; },
+        },
+        filters: {
+            capitalize: function (value) {
+            if (!value) return ''
+            value = value.toString()
+            return value.charAt(0).toUpperCase() + value.slice(1)
             }
         }
     }
