@@ -28,8 +28,8 @@
                                 {{n_book.personas}}
                             </td>
                             <td>
-                                <a class="btn-view-fund btn btn-default btn-xs float-right" v-bind:href="'/reservas/' + n_book.id"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                <a class="btn-view-fund btn btn-default btn-xs float-right" v-on:click="onClickDelete(index, n_book.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                <a class="btn-view-fund btn btn-default btn-xs float-right" v-on:click="onClickDelete(index, n_book.id)" title="Eliminar reserva"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                <a class="btn-view-fund btn btn-default btn-xs float-right" v-bind:href="'/reservas/' + n_book.id" title="Editar reserva"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             </td>
                         </tr>
                     </template>

@@ -64305,11 +64305,16 @@ var render = function() {
                       {
                         staticClass:
                           "btn-view-fund btn btn-default btn-xs float-right",
-                        attrs: { href: "/reservas/" + n_book.id }
+                        attrs: { title: "Eliminar reserva" },
+                        on: {
+                          click: function($event) {
+                            _vm.onClickDelete(index, n_book.id)
+                          }
+                        }
                       },
                       [
                         _c("i", {
-                          staticClass: "fa fa-pencil-square-o",
+                          staticClass: "fa fa-trash-o",
                           attrs: { "aria-hidden": "true" }
                         })
                       ]
@@ -64320,15 +64325,14 @@ var render = function() {
                       {
                         staticClass:
                           "btn-view-fund btn btn-default btn-xs float-right",
-                        on: {
-                          click: function($event) {
-                            _vm.onClickDelete(index, n_book.id)
-                          }
+                        attrs: {
+                          href: "/reservas/" + n_book.id,
+                          title: "Editar reserva"
                         }
                       },
                       [
                         _c("i", {
-                          staticClass: "fa fa-trash-o",
+                          staticClass: "fa fa-pencil-square-o",
                           attrs: { "aria-hidden": "true" }
                         })
                       ]
@@ -64432,6 +64436,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_pc_bootstrap4_datetimepicker_build_css_bootstrap_datetimepicker_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_pc_bootstrap4_datetimepicker_build_css_bootstrap_datetimepicker_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
+//
 //
 //
 //
@@ -68119,130 +68124,143 @@ var render = function() {
       { staticClass: "panel-body" },
       [
         _c("grid-component", {
-          attrs: { bookings: _vm.bookings, cols: _vm.cols, rows: _vm.rows },
+          attrs: {
+            bookings: _vm.bookings,
+            cols: _vm.cols,
+            rows: _vm.rows,
+            fecha_reserva: _vm.fecha_reserva
+          },
           on: { updateNewBooking: _vm.addBooking }
         }),
         _vm._v(" "),
-        _vm.bookings.length > 0
-          ? _c(
-              "form",
-              {
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    return _vm.saveBooking($event)
-                  }
-                }
-              },
-              [
-                _c("input", {
-                  attrs: { type: "hidden", name: "personas" },
-                  domProps: { value: _vm.totalPersonas }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "card mb-3" }, [
-                  _c("div", { staticClass: "card-body" }, [
-                    _vm.codigo_reserva
-                      ? _c("div", { staticClass: "form-group" }, [
-                          _c(
-                            "label",
-                            {
-                              attrs: { for: "fecha_reserva" },
-                              model: {
-                                value: _vm.codigo_reserva,
-                                callback: function($$v) {
-                                  _vm.codigo_reserva = $$v
-                                },
-                                expression: "codigo_reserva"
-                              }
-                            },
-                            [_vm._v("Reserva: " + _vm._s(_vm.codigo_reserva))]
-                          )
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "form-group" },
-                      [
-                        _c("label", { attrs: { for: "fecha_reserva" } }, [
-                          _vm._v("Fecha de la reserva:")
-                        ]),
-                        _vm._v(" "),
-                        _c("date-picker", {
-                          class: {
-                            "is-invalid":
-                              _vm.attemptSubmit && _vm.missingBookingDate
-                          },
-                          attrs: { config: _vm.options },
+        _c(
+          "form",
+          {
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.saveBooking($event)
+              }
+            }
+          },
+          [
+            _c("input", {
+              attrs: { type: "hidden", name: "personas" },
+              domProps: { value: _vm.totalPersonas }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "card mb-3" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _vm.codigo_reserva
+                  ? _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          attrs: { for: "fecha_reserva" },
                           model: {
-                            value: _vm.fecha_reserva,
+                            value: _vm.codigo_reserva,
                             callback: function($$v) {
-                              _vm.fecha_reserva = $$v
+                              _vm.codigo_reserva = $$v
                             },
-                            expression: "fecha_reserva"
+                            expression: "codigo_reserva"
                           }
-                        })
-                      ],
-                      1
-                    ),
+                        },
+                        [_vm._v("Reserva: " + _vm._s(_vm.codigo_reserva))]
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", { attrs: { for: "fecha_reserva" } }, [
+                      _vm._v("Fecha de la reserva:")
+                    ]),
                     _vm._v(" "),
-                    _c(
+                    _c("date-picker", {
+                      class: {
+                        "is-invalid":
+                          _vm.attemptSubmit && _vm.missingBookingDate
+                      },
+                      attrs: { config: _vm.options },
+                      model: {
+                        value: _vm.fecha_reserva,
+                        callback: function($$v) {
+                          _vm.fecha_reserva = $$v
+                        },
+                        expression: "fecha_reserva"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _vm.bookings.length > 0
+                  ? _c(
                       "ul",
                       { staticClass: "list-group" },
-                      _vm._l(_vm.bookings, function(n_book, index) {
-                        return _c("bookings-component", {
-                          key: index,
-                          attrs: { bookings: n_book },
-                          on: {
-                            delete: function($event) {
-                              _vm.deleteBooking(index)
+                      [
+                        _vm._l(_vm.bookings, function(n_book, index) {
+                          return _c("bookings-component", {
+                            key: index,
+                            attrs: { bookings: n_book },
+                            on: {
+                              delete: function($event) {
+                                _vm.deleteBooking(index)
+                              }
                             }
-                          }
-                        })
-                      })
+                          })
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "li",
+                          {
+                            staticClass:
+                              "list-group-item list-group-item-action active"
+                          },
+                          [
+                            _vm._v(
+                              "Total Personas: " + _vm._s(_vm.totalPersonas)
+                            )
+                          ]
+                        )
+                      ],
+                      2
+                    )
+                  : _vm._e()
+              ]),
+              _vm._v(" "),
+              _vm.bookings.length > 0
+                ? _c("div", { staticClass: "card-footer" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success",
+                        attrs: { type: "submit" }
+                      },
+                      [_vm._v("Guardar Reserva")]
                     ),
                     _vm._v(" "),
                     _c(
-                      "li",
+                      "a",
                       {
-                        staticClass:
-                          "list-group-item list-group-item-action active"
+                        staticClass: "btn btn-primary",
+                        attrs: { href: "/reservas" }
                       },
-                      [_vm._v("Total Personas: " + _vm._s(_vm.totalPersonas))]
+                      [_vm._v("Cancelar")]
                     )
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(0)
-                ])
-              ]
-            )
-          : _vm._e()
+                  ])
+                : _vm._e()
+            ])
+          ]
+        )
       ],
       1
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer" }, [
-      _c(
-        "button",
-        { staticClass: "btn btn-success", attrs: { type: "submit" } },
-        [_vm._v("Guardar Reserva")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        { staticClass: "btn btn-primary", attrs: { href: "/reservas" } },
-        [_vm._v("Cancelar")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -68305,7 +68323,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
+/* WEBPACK VAR INJECTION */(function(moment) {//
 //
 //
 //
@@ -68338,7 +68356,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['bookings', 'cols', 'rows'],
+    props: ['bookings', 'cols', 'rows', 'fecha_reserva'],
     data: function data() {
         return {};
     },
@@ -68348,8 +68366,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         onClickUpdate: function onClickUpdate(index_row, index_col) {
+            var _this = this;
+
             var emit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
+
+            if (this.fecha_reserva != '') {
+                var date = moment(String(this.fecha_reserva), "DD-MM-YYYY").format('YYYY-MM-DD');
+                axios.get('/reservas/disponibilidad/' + date + '/' + index_row + '/' + index_col).then(function (response) {
+                    console.log('response availability', response);
+                    if (response.data.disponibilidad > 0) {
+                        alert('Ya existe una reserva para la fecha y ubicación seleccionada.\nPor favor intente en una nueva ubicación');
+                    } else {
+                        _this.$emit('updateNewBooking', index_row, index_col);
+                    }
+                    // this.thoughts = response.data;
+                });
+            } else {
+                alert('Por favor selecciona una fecha para verificar la disponibilidad de la ubicación');
+            }
             // let found = this.existNewBooking(index_row, index_col);
 
             // if (found < 0) {
@@ -68367,7 +68402,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // }
 
             // if (emit)
-            this.$emit('updateNewBooking', index_row, index_col);
         },
 
         contains: function contains(index_row, index_col) {
@@ -68388,15 +68422,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     created: function created() {
-        var _this = this;
-
         this.$root.$on('UpdateGrid', function (index_row, index_col) {
             // your code goes here
             console.log(index_row, index_col);
-            _this.onClickUpdate(index_row, index_col, false);
+            // this.onClickUpdate(index_row, index_col, false);
         });
     }
 });
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
 /* 182 */

@@ -5,11 +5,12 @@
                 @updateNewBooking="addBooking"
                 :bookings="bookings"
                 :cols="cols"
-                :rows="rows"></grid-component>
+                :rows="rows"
+                :fecha_reserva="fecha_reserva"></grid-component>
 
             <form 
                 @submit.prevent="saveBooking" 
-                v-if="bookings.length > 0">
+                >
                 <input type="hidden" :value="totalPersonas" name="personas" >
                 <div  class="card mb-3">
                     <div class="card-body">
@@ -20,16 +21,16 @@
                             <label for="fecha_reserva">Fecha de la reserva:</label>
                             <date-picker v-model="fecha_reserva" :config="options" v-bind:class="{ 'is-invalid': attemptSubmit && missingBookingDate }"></date-picker>
                         </div>
-                        <ul class="list-group">
+                        <ul class="list-group" v-if="bookings.length > 0">
                         <bookings-component 
                             v-for="(n_book, index) in bookings" 
                             :key="index" 
                             :bookings="n_book"
                             @delete="deleteBooking(index)"></bookings-component>
+                            <li class="list-group-item list-group-item-action active">Total Personas: {{ totalPersonas }}</li>
                         </ul>
-                        <li class="list-group-item list-group-item-action active">Total Personas: {{ totalPersonas }}</li>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer" v-if="bookings.length > 0">
                         <button type="submit" class="btn btn-success">Guardar Reserva</button>
                         <a href="/reservas" class="btn btn-primary">Cancelar</a>
                     </div>

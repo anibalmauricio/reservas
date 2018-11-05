@@ -54,4 +54,30 @@ class ReservasController extends Controller
         return View('reserva');
     }
 
+    /**
+     * Verificamos disponibilidad de ubicación
+     *
+     * @param  date  $fecha
+     * @param  int  $row
+     * @param  int  $col
+     * @return array
+     */
+    public function disponibilidad($fecha, $row, $col)
+    {
+        $ubicacion = ['row' => $row, 'col' => $col];
+
+        $reservas = Reserva::where('fecha_reserva', $fecha)->get();
+        $is_available = 0;
+        foreach ($reservas as $reserva) {
+            $is_available = Reserva::find($reserva->id)->ubicaciones()->where($ubicacion)->count();
+            if ($is_available > 0) {
+                break;
+            }
+        }
+
+        $array = array('disponibilidad' => $is_available);
+        $array = json_encode($array);
+        return $array;
+    }
+
 }

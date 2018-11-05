@@ -107,4 +107,5 @@ class ReservaController extends Controller
         // Insert UbicacionReserva
         UbicacionReserva::insert($book_records);
     }
+
 }

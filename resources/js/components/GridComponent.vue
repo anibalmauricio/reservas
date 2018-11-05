@@ -31,7 +31,7 @@
 </template>
 <script>
     export default {
-        props: ['bookings', 'cols', 'rows'],
+        props: ['bookings', 'cols', 'rows', 'fecha_reserva'],
         data() {
             return {
                 
@@ -42,6 +42,21 @@
         },
         methods: {
             onClickUpdate(index_row, index_col, emit = true) {
+
+                if (this.fecha_reserva != '') {
+                    let date = moment(String(this.fecha_reserva), "DD-MM-YYYY").format('YYYY-MM-DD')
+                    axios.get(`/reservas/disponibilidad/${date}/${index_row}/${index_col}`).then((response) => {
+                        console.log('response availability', response);
+                        if (response.data.disponibilidad > 0) {
+                            alert('Ya existe una reserva para la fecha y ubicación seleccionada.\nPor favor intente en una nueva ubicación');
+                        } else {
+                            this.$emit('updateNewBooking', index_row, index_col);
+                        }
+                        // this.thoughts = response.data;
+                    })
+                } else {
+                    alert('Por favor selecciona una fecha para verificar la disponibilidad de la ubicación');
+                }
                 // let found = this.existNewBooking(index_row, index_col);
                 
                 // if (found < 0) {
@@ -59,7 +74,6 @@
                 // }
 
                 // if (emit)
-                    this.$emit('updateNewBooking', index_row, index_col);
             },
             contains: function(index_row, index_col) {
                 // console.log('contains');
@@ -82,7 +96,7 @@
             this.$root.$on('UpdateGrid', (index_row, index_col) => {
                 // your code goes here
                 console.log(index_row, index_col);
-                this.onClickUpdate(index_row, index_col, false);
+                // this.onClickUpdate(index_row, index_col, false);
             })
         }
     }
