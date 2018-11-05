@@ -66,7 +66,7 @@ class ReservasController extends Controller
     {
         $ubicacion = ['row' => $row, 'col' => $col];
 
-        $reservas = Reserva::where('fecha_reserva', $fecha)->get();
+        $reservas = Reserva::where('fecha_reserva', $fecha)->where('user_id', '!=' , auth()->id())->get();
         $is_available = 0;
         foreach ($reservas as $reserva) {
             $is_available = Reserva::find($reserva->id)->ubicaciones()->where($ubicacion)->count();
