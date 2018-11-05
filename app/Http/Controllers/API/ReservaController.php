@@ -98,8 +98,8 @@ class ReservaController extends Controller
                 // Formulate record that will be saved
                 $book_records[] = [
                     'reserva_id' => $reserva_id,
-                    'fila' => $book['index_row'],
-                    'columna' => $book['index_col']
+                    'row' => $book['index_row'],
+                    'col' => $book['index_col']
                 ];
             }
         }

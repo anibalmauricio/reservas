@@ -22,4 +22,5 @@ Route::apiResource('reserva', 'API\ReservaController');
 
 Route::get('reservas', 'ReservasController@index')->name('reservas');
 
-Route::get('detail/{id}', 'ReservasController@edit')->where('id', '[0-9]+')->name('mostrarReserva');
+Route::get('reservas/new', 'ReservasController@new')->name('reservas_new');
+Route::get('reservas/{id}', 'ReservasController@edit')->where('id', '[0-9]+')->name('mostrarReserva');

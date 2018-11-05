@@ -3,7 +3,7 @@
         <div class="panel-body">
             <grid-component 
                 @updateNewBooking="addBooking"
-                :new_bookings="new_bookings"
+                :bookings="bookings"
                 :cols="cols"
                 :rows="rows"></grid-component>
 
@@ -13,6 +13,9 @@
                 <input type="hidden" :value="totalPersonas" name="personas" >
                 <div  class="card mb-3">
                     <div class="card-body">
+                        <div class="form-group" v-if="codigo_reserva">
+                            <label for="fecha_reserva" v-model="codigo_reserva">Reserva: {{codigo_reserva}}</label>
+                        </div>
                         <div class="form-group">
                             <label for="fecha_reserva">Fecha de la reserva:</label>
                             <date-picker v-model="fecha_reserva" :config="options" v-bind:class="{ 'is-invalid': attemptSubmit && missingBookingDate }"></date-picker>
@@ -27,7 +30,8 @@
                         <li class="list-group-item list-group-item-action active">Total Personas: {{ totalPersonas }}</li>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Guardar Reserva</button>
+                        <button type="submit" class="btn btn-success">Guardar Reserva</button>
+                        <a href="/reservas" class="btn btn-primary">Cancelar</a>
                     </div>
                 </div>
             </form>
@@ -38,7 +42,7 @@
 
 <script>
     // Import required dependencies 
-    import 'bootstrap/dist/css/bootstrap.css';
+    // import 'bootstrap/dist/css/bootstrap.css';
 
     // Import this component
     import datePicker from 'vue-bootstrap-datetimepicker';
@@ -53,7 +57,7 @@
             return {
                 cols: this.cols_range('A', 'J'),
                 rows: this.rows_range(1, 5),
-                new_bookings: [],
+                // new_bookings: [],
                 bookings: [],
                 date: new Date(),
                 options: {
@@ -62,37 +66,49 @@
                 },
                 fecha_reserva: '',
                 personas: 0,
-                attemptSubmit: false
+                attemptSubmit: false,
+                isEditing: false,
+                reserva: null,
+                codigo_reserva: null
             }
         },
         mounted() {
-            console.log('Component mounted.');
-            this.new_bookings = [{
-                    col: 0,
-                    row: 0
-                }, {
-                    col: 6,
-                    row: 3
-            }];
-            this.bookings = [{
-                'col': this.cols[0],
-                'index_col': 0,
-                'row': this.rows[0],
-                'index_row': 0
-            }, {
-                'col': this.cols[6],
-                'index_col': 6,
-                'row': this.rows[3],
-                'index_row': 3
-            }];
+            // console.log('Component mounted.');
+            if (typeof window.__INITIAL_STATE__ !== 'undefined') {
+                console.log(window.__INITIAL_STATE__);
+                let initialState = window.__INITIAL_STATE__;
+                this.fecha_reserva = moment(String(initialState.fecha_reserva), "YYYY-MM-DD").format('DD/MM/YYYY');
+                let books = initialState.books;
+                this.isEditing = true;
+                this.reserva = initialState.id;
+                this.codigo_reserva = initialState.codigo_reserva;
+                for(let i=0; i < books.length; i++){
+                    this.bookings.push({
+                        'col': this.cols[books[i].col],
+                        'index_col': books[i].col,
+                        'row': this.rows[books[i].row],
+                        'index_row': books[i].row
+                    });
+                }
+            }
+
+            console.log('bookings', this.bookings);
+            // this.new_bookings = [{
+            //         col: 0,
+            //         row: 0
+            //     }, {
+            //         col: 6,
+            //         row: 3
+            // }];
             // axios.get('/thoughts').then((response) => {
             //     this.thoughts = response.data;
             // })
         },
         methods: {
             addBooking(index_row, index_col) {
-                // console.log('addBooking', index_row, index_col);
-                let found = this.isExistBook(this.cols[index_col], this.rows[index_row]);
+                console.log('addBooking', index_row, index_col);
+                let found = this.isExistBook(index_col, index_row);
+                console.log(found, this.bookings);
                 if (found >= 0) {
                     this.bookings.splice(found, 1);
                 } else {
@@ -103,11 +119,11 @@
                         'index_row': index_row
                     });
                 }
-                console.log('this.bookings', this.bookings);
+                // console.log('this.bookings', this.bookings);
             },
             isExistBook : function(col, row){
                 for(let i=0; i < this.bookings.length; i++){
-                    if( this.bookings[i].col == col && this.bookings[i].row == row){
+                    if( this.bookings[i].index_col == col && this.bookings[i].index_row == row){
                         return i;
                     }
                 }
@@ -115,7 +131,7 @@
             },
             deleteBooking(index) {
                 this.bookings.splice(index, 1);
-                console.log('deleteBooking', this.new_bookings);
+                console.log('deleteBooking', this.bookings);
             },
             updateThought(index, thought) {
                 this.bookings[index] = thought;
@@ -145,15 +161,26 @@
                     personas: this.totalPersonas
                 };
 
-                console.log(params);
-
-                axios.post('/reserva', params)
-                    .then((response) => {
-                        console.log(response);
-                        // this.descripcion = '';
-                        const reserva = response.data;
-                        this.$emit('new', reserva);
-                    });
+                // console.log(params);
+                // alert(this.isEditing);
+                // return false;
+                if (this.isEditing) {
+                    axios.put(`/reserva/${this.reserva}`, params)
+                        .then((response) => {
+                            // console.log(response);
+                            // this.descripcion = '';
+                            const reserva = response.data;
+                            window.location.href = "/reservas";
+                        });
+                } else {
+                    axios.post('/reserva', params)
+                        .then((response) => {
+                            // console.log(response);
+                            // this.descripcion = '';
+                            const reserva = response.data;
+                            window.location.href = "/reservas";
+                        });
+                }
             }
         },
         components: {

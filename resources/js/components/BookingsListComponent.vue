@@ -1,6 +1,7 @@
 <template>
     <div class="panel panel-default">
         <div class="panel-body">
+            <a href="/reservas/new" class="btn btn-primary float-right mb-3">Nueva Reserva</a>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -27,8 +28,8 @@
                                 {{n_book.personas}}
                             </td>
                             <td>
-                                <a v-bind:href="'/reservas/' + n_book.id"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i></a>
-                                <a v-on:click="onClickDelete(index)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                <a class="btn-view-fund btn btn-default btn-xs float-right" v-bind:href="'/reservas/' + n_book.id"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a class="btn-view-fund btn btn-default btn-xs float-right" v-on:click="onClickDelete(index, n_book.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                             </td>
                         </tr>
                     </template>
@@ -58,14 +59,13 @@
             // })
         },
         methods: {
-            onClickDelete(index) {
-                alert(index);
-                if (confirm('Está seguro de querer eliminar esta reserva? ' + index)) {
-                    axios.delete(`/reserva/${index}`).then((response) => {
-                        this.bookings = response.data;
+            onClickDelete(index, book_id) {
+                if (confirm('Está seguro de querer eliminar esta reserva? ')) {
+                    axios.delete(`/reserva/${book_id}`).then((response) => {
+                        // this.bookings = response.data;
                         console.log(response);
                         // this.$emit('delete');
-                        // this.bookings.splice(index, 1);
+                        this.bookings.splice(index, 1);
                     });
                 }
             }

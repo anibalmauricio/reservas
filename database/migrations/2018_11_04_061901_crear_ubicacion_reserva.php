@@ -17,10 +17,10 @@ class CrearUbicacionReserva extends Migration
             $table->increments('id');
             $table->integer('reserva_id')->unsigned();
             $table->foreign('reserva_id')->references('id')->on('reservas')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('fila')->unsigned();
-            $table->integer('columna')->unsigned();
+            $table->integer('row')->unsigned();
+            $table->integer('col')->unsigned();
             // $table->timestamps();
-            $table->index(['reserva_id', 'fila', 'columna']);
+            $table->index(['reserva_id', 'row', 'col']);
         });
     }
 

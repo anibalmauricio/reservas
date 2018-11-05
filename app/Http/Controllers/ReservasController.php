@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Reserva;
+use App\UbicacionReserva;
 use Illuminate\Http\Request;
 
 class ReservasController extends Controller
@@ -36,10 +37,21 @@ class ReservasController extends Controller
     public function edit($id)
     {
         $reserva = Reserva::find($id);
+        $ubicaciones = UbicacionReserva::where('reserva_id', $id)->get();
+
+        $reserva = $reserva->toArray();
+        $reserva['books'] = $ubicaciones->toArray();
+        $reserva = json_encode($reserva);
+        return View('reserva', compact('reserva'));
+    }
+
+    public function new()
+    {
+        // $reserva = Reserva::find($id);
         // echo "<pre>";
         // print_r($reserva);
         // echo "</pre>";
-        return View('reserva', $reserva);
+        return View('reserva');
     }
 
 }

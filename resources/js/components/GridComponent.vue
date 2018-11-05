@@ -31,7 +31,7 @@
 </template>
 <script>
     export default {
-        props: ['new_bookings', 'cols', 'rows'],
+        props: ['bookings', 'cols', 'rows'],
         data() {
             return {
                 
@@ -42,25 +42,27 @@
         },
         methods: {
             onClickUpdate(index_row, index_col, emit = true) {
-                let found = this.existNewBooking(index_row, index_col);
+                // let found = this.existNewBooking(index_row, index_col);
                 
-                if (found < 0) {
-                    let length = this.new_bookings.push({
-                        col: index_col,
-                        row: index_row
-                    });
-                    this.$set(this.new_bookings[length - 1], 'selected', !this.new_bookings[length - 1].selected)
+                // if (found < 0) {
+                //     let length = this.bookings.push({
+                //         'col': this.cols[index_col],
+                //         'index_col': index_col,
+                //         'row': this.rows[index_row],
+                //         'index_row': index_row
+                //     });
+                //     this.$set(this.bookings[length - 1], 'selected', !this.bookings[length - 1].selected)
                     
-                } else {
-                    this.new_bookings.splice(found, 1);
+                // } else {
+                //     this.bookings.splice(found, 1);
                     
-                }
+                // }
 
-                if (emit)
+                // if (emit)
                     this.$emit('updateNewBooking', index_row, index_col);
             },
             contains: function(index_row, index_col) {
-                console.log('contains');
+                // console.log('contains');
                 let found = this.existNewBooking(index_row, index_col);
                 
                 return {
@@ -68,8 +70,8 @@
                 }
             },
             existNewBooking: function (index_row, index_col) {
-                for(let i=0; i < this.new_bookings.length; i++){
-                    if( this.new_bookings[i].col == index_col && this.new_bookings[i].row == index_row){
+                for(let i=0; i < this.bookings.length; i++){
+                    if( this.bookings[i].index_col == index_col && this.bookings[i].index_row == index_row){
                         return i;
                     }
                 }
@@ -77,10 +79,9 @@
             }
         },
         created() {
-            this.$root.$on('createImage', (index_row, index_col) => {
+            this.$root.$on('UpdateGrid', (index_row, index_col) => {
                 // your code goes here
                 console.log(index_row, index_col);
-                console.log('ssssss');
                 this.onClickUpdate(index_row, index_col, false);
             })
         }

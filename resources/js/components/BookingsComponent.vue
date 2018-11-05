@@ -22,7 +22,7 @@
             onClickDeleteBook: function(row, col) {
                 // alert('aaaaa');
                 this.$emit('delete');
-                this.$root.$emit('createImage', row, col)
+                this.$root.$emit('UpdateGrid', row, col)
             }
         }
     }
