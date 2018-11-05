@@ -46,7 +46,13 @@ class ReservaController extends Controller
 
         $this->store_ubications($books, $reserva->id);
 
-        Storage::disk('local')->put('file.txt', 'Contents');
+        $exists = Storage::disk('public')->exists('file.txt');
+        $txt = 'Se ha guardado una nueva reserva. Esta es la información de la reserva creada.\nCodigo Reserva:'.$random.'.\nFecha Reserva:'.$request->fecha_reserva.'\nNúmero de personas:'.$request->personas.'\nCreado en:'.date('d-m-Y H:i:s');
+        if ($exists) {
+            Storage::append('file.txt', $txt);
+        } else {
+            Storage::disk('public')->put('file.txt', $txt);
+        }
 
         return $reserva;
     }
@@ -70,6 +76,13 @@ class ReservaController extends Controller
         $books = $request->books;
         $this->store_ubications($books, $reserva->id);
 
+        $exists = Storage::disk('public')->exists('file.txt');
+        $txt = 'Se ha actualizado una reserva. Esta es la información de la reserva actualizada.\nCodigo Reserva:'.$reserva->codigo_reserva.'.\nFecha Reserva:'.$request->fecha_reserva.'\nNúmero de personas:'.$request->personas.'\nCreado en:'.date('d-m-Y H:i:s');
+        if ($exists) {
+            Storage::append('file.txt', $txt);
+        } else {
+            Storage::disk('public')->put('file.txt', $txt);
+        }
         return $reserva;
     }
 
